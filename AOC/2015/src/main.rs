@@ -1,22 +1,27 @@
 use std::{
-    env, fs,
-    io::{self, stdin},
+    env, fs, io
 };
 
 mod days;
 
-fn read_input(filename: &str) -> String {
+fn read_input(filename: &str) -> Vec<String> {
     let content = fs::read_to_string(filename).expect("Error while reading file.");
-    content.trim_end().to_string()
+    content.split('\n').map(|s| s.to_string()).collect()
+}
+
+fn get_day(day_num: u32) -> String {
+    if day_num >=1 && day_num <= 25 {
+        format!("day{}", day_num)
+    } else {
+        panic!("Invalid day number. Must be between 1 and 25.")
+    }
 }
 
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
-
+    let args: Vec<String> = env::args().collect();
 
     let mut day_num: String = String::new();
     if args.len() >= 2 {
-        // day_num = args[1].clone();
         day_num.clone_from(&args[1]);
     } else {
         println!("Enter the day number: ");
@@ -33,11 +38,20 @@ fn main() {
     };
 
     let cwd = env::current_dir().unwrap();
-    let filename = cwd.join(format!("input/{}.txt", day_num));
-    println!("Reading {}", filename.display());
+    let temp = cwd.join(format!("input/{}.txt", get_day(day_num)));
+    let filename = temp.to_str().expect("Invalid UTF-8 sequence in file path");
 
-    let filename_str = filename.to_str().expect("Invalid UTF-8 sequence in file path");
-
-    let input = read_input(filename_str);
-    println!("Floor number: {}", days::day01::part1(input));
+    match day_num {
+        1 => {
+            let input_sequence: String = read_input(&filename).get(0).expect("No input found").clone();
+            println!("Part1: Floor number: {}", days::day1::part1(&input_sequence));
+            println!("Part2: Position at floor -1: {}", days::day1::part2(&input_sequence));
+        },
+        2 => {
+            let box_dimensions = read_input(&filename);
+            println!("Part 1: Wrapping paper needed: {}", days::day2::part1(&box_dimensions));
+            println!("Part 2: Ribbon needed: {}", days::day2::part2(&box_dimensions));
+        },
+        _ => println!("The Day number is either invalid or is not implemented.")
+    }
 }
