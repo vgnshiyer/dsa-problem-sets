@@ -52,6 +52,11 @@ fn main() {
             println!("Part 1: Wrapping paper needed: {}", days::day2::part1(&box_dimensions));
             println!("Part 2: Ribbon needed: {}", days::day2::part2(&box_dimensions));
         },
+        3 => {
+            let directions: String = read_input(&filename).get(0).expect("Invalid input directions").clone();
+            println!("Part 1: Presents delivered: {}", days::day3::part1(&directions));
+            println!("Part 2: Presents delivered: {}", days::day3::part2(&directions));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
