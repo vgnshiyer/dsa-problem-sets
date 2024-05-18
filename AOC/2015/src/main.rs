@@ -1,5 +1,5 @@
 use std::{
-    env, fs, io
+    env, fs::{self, read}, io
 };
 
 mod days;
@@ -62,6 +62,11 @@ fn main() {
             println!("Part1: Smallest number: {}", days::day4::part1(&secret_key));
             println!("Part2: Smallest number: {}", days::day4::part2(&secret_key));
         },
+        5 => {
+            let strings = read_input(&filename);
+            println!("Part 1: Nice strings: {}", days::day5::part1(&strings));
+            println!("Part 2: Nice strings: {}", days::day5::part2(&strings));
+        }
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
