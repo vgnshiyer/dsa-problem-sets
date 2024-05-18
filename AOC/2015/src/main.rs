@@ -57,6 +57,11 @@ fn main() {
             println!("Part 1: Presents delivered: {}", days::day3::part1(&directions));
             println!("Part 2: Presents delivered: {}", days::day3::part2(&directions));
         },
+        4 => {
+            let secret_key: String = read_input(&filename).get(0).expect("Invalid input").clone();
+            println!("Part1: Smallest number: {}", days::day4::part1(&secret_key));
+            println!("Part2: Smallest number: {}", days::day4::part2(&secret_key));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
