@@ -66,6 +66,11 @@ fn main() {
             let strings = read_input(&filename);
             println!("Part 1: Nice strings: {}", days::day5::part1(&strings));
             println!("Part 2: Nice strings: {}", days::day5::part2(&strings));
+        },
+        6 => {
+            let instructions = read_input(&filename);
+            println!("Part1: Lights lit: {}", days::day6::part1(&instructions));
+            println!("Part2: Lights lit: {}", days::day6::part2(&instructions));
         }
         _ => println!("The Day number is either invalid or is not implemented.")
     }
