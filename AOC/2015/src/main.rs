@@ -71,7 +71,13 @@ fn main() {
             let instructions = read_input(&filename);
             println!("Part1: Lights lit: {}", days::day6::part1(&instructions));
             println!("Part2: Lights lit: {}", days::day6::part2(&instructions));
-        }
+        },
+        7 => {
+            let connections: Vec<String> = read_input(&filename);
+            let part1_res = days::day7::part1(&connections);
+            println!("Part1: Signal in wire a: {}", part1_res);
+            println!("Part2: New Signal in wire a: {}", days::day7::part2(&connections, part1_res));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
