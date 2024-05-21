@@ -1,4 +1,4 @@
-use std::{collections::HashSet, hash::Hash};
+use std::collections::HashSet;
 
 pub fn part1(directions: &str) -> u32 {
     let mut presents: u32 = 1;

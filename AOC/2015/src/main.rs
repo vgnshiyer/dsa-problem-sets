@@ -1,5 +1,5 @@
 use std::{
-    env, fs::{self, read}, io
+    env, fs, io
 };
 
 mod days;
@@ -82,6 +82,11 @@ fn main() {
             let strings: Vec<String> = read_input(&filename);
             println!("Part1: {}", days::day8::part1(&strings));
             println!("Part2: {}", days::day8::part2(&strings));
+        },
+        9 => {
+            let distances: Vec<String> = read_input(&filename);
+            println!("Part1: Shortest distance: {}", days::day9::part1(&distances));
+            println!("Part1: Longest distance: {}", days::day9::part2(&distances));
         },
         _ => println!("The Day number is either invalid or is not implemented.")
     }

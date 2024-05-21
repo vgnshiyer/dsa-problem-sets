@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 fn has_3_vowels(string: &str) -> bool {
     let mut vowels: u8 = 0;
     for c in string.chars() {

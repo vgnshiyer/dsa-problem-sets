@@ -18,7 +18,6 @@ fn get_memory_chars(string: &String) -> usize {
                 memory_chars -= 3;
                 i += 4;
             }
-            // x
             continue;
         }
         i += 1;
