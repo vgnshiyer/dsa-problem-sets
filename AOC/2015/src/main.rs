@@ -92,7 +92,13 @@ fn main() {
             let starting_seq = read_input(&filename).get(0).unwrap().clone();
             println!("Part 1: Length of sequence: {}", days::day10::part1(&starting_seq));
             println!("Part 2: Length of sequence: {}", days::day10::part2(&starting_seq));
-        }
+        },
+        11 => {
+            let current_password: String = read_input(&filename).get(0).unwrap().clone();
+            let next_password = days::day11::part1(&current_password);
+            println!("Part 1: Next password: {}", next_password);
+            println!("Part 1: Next password: {}", days::day11::part1(&next_password));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
