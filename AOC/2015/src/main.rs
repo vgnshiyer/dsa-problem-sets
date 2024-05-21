@@ -88,6 +88,11 @@ fn main() {
             println!("Part1: Shortest distance: {}", days::day9::part1(&distances));
             println!("Part1: Longest distance: {}", days::day9::part2(&distances));
         },
+        10 => {
+            let starting_seq = read_input(&filename).get(0).unwrap().clone();
+            println!("Part 1: Length of sequence: {}", days::day10::part1(&starting_seq));
+            println!("Part 2: Length of sequence: {}", days::day10::part2(&starting_seq));
+        }
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
