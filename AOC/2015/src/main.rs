@@ -99,6 +99,11 @@ fn main() {
             println!("Part 1: Next password: {}", next_password);
             println!("Part 1: Next password: {}", days::day11::part1(&next_password));
         },
+        12 => {
+            let json: String = read_input(&filename).get(0).unwrap().clone();
+            println!("Part 1: Sum of numbers: {}", days::day12::part1(&json));
+            println!("Part 2: Sum of numbers: {}", days::day12::part2(&json));
+        }
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
