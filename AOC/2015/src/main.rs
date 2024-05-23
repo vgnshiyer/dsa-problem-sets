@@ -103,7 +103,12 @@ fn main() {
             let json: String = read_input(&filename).get(0).unwrap().clone();
             println!("Part 1: Sum of numbers: {}", days::day12::part1(&json));
             println!("Part 2: Sum of numbers: {}", days::day12::part2(&json));
-        }
+        },
+        13 => {
+            let guest_list: Vec<String> = read_input(&filename);
+            println!("Part 1: total change in happiness: {}", days::day13::part1(&guest_list));
+            println!("Part 2: total change in happiness: {}", days::day13::part2(&guest_list));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }

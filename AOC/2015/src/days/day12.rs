@@ -21,10 +21,11 @@ pub fn part1(json: &str) -> i32 {
     total
 }
 
+#[allow(dead_code)]
 fn simplify(json: serde_json::Value) -> i32 {
     let mut total: i32 = 0;
     if let Some(obj) = json.as_object() {
-        for (_, value) in obj {
+        for value in obj.values() {
             if let Some(string) = value.as_str() {
                 if string == "red" {
                     return 0;
