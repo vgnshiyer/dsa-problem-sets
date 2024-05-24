@@ -109,6 +109,11 @@ fn main() {
             println!("Part 1: total change in happiness: {}", days::day13::part1(&guest_list));
             println!("Part 2: total change in happiness: {}", days::day13::part2(&guest_list));
         },
+        14 => {
+            let speed_list: Vec<String> = read_input(&filename);
+            println!("Part 1: distance travelled by winner: {}", days::day14::part1(&speed_list));
+            println!("Part 2: points scored by winner: {}", days::day14::part2(&speed_list));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
