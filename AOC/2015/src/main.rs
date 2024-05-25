@@ -119,6 +119,11 @@ fn main() {
             println!("Part 1: total score of best cookie: {}", days::day15::part1(&ingredients));
             println!("Part 2: total score of best 500 Calorie cookie: {}", days::day15::part2(&ingredients));
         },
+        16 => {
+            let sue_list: Vec<String> = read_input(&filename);
+            println!("Part 1: Aunt Sue who gave the gift: {}", days::day16::part1(&sue_list));
+            println!("Part 2: Aunt Sue who gave the gift: {}", days::day16::part2(&sue_list));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
