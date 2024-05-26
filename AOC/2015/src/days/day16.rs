@@ -1,5 +1,3 @@
-use std::{collections::HashMap, f32::INFINITY};
-
 #[derive(Debug)]
 struct Traits {
     children: Option<u32>,
@@ -30,28 +28,6 @@ impl Traits {
             _ => None
         }
     }
-}
-
-fn parse_sue_data(sue_traits: &String, sues: &mut Vec<Traits>) {
-    let parts: Vec<&str> = sue_traits.split_whitespace().collect();
-    let traits_str: String = parts[2..].join(" ");
-    let traits_map: HashMap<String, u32> = traits_str.split(", ").map(|t| {
-        let pair: Vec<&str> = t.split(": ").collect();
-        (pair[0].to_string(), pair[1].parse().unwrap())
-    }).collect();
-    
-    sues.push(Traits{
-        children: traits_map.get("children").cloned(),
-        cats: traits_map.get("cats").cloned(),
-        samoyeds: traits_map.get("samoyeds").cloned(),
-        pomeranians: traits_map.get("pomeranians").cloned(),
-        akitas: traits_map.get("akitas").cloned(),
-        vizslas: traits_map.get("vizslas").cloned(),
-        goldfish: traits_map.get("goldfish").cloned(),
-        trees: traits_map.get("trees").cloned(),
-        cars: traits_map.get("cars").cloned(),
-        perfumes: traits_map.get("perfumes").cloned(),
-    });
 }
 
 const MFCSAM_SCAN: Traits = Traits {

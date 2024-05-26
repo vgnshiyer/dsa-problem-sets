@@ -124,6 +124,11 @@ fn main() {
             println!("Part 1: Aunt Sue who gave the gift: {}", days::day16::part1(&sue_list));
             println!("Part 2: Aunt Sue who gave the gift: {}", days::day16::part2(&sue_list));
         },
+        17 => {
+            let containers: Vec<String> = read_input(&filename);
+            println!("Part 1: How many combinations? {}", days::day17::part1(&containers));
+            println!("Part 2: How many combinations for min containers? {}", days::day17::part2(&containers));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
