@@ -129,6 +129,11 @@ fn main() {
             println!("Part 1: How many combinations? {}", days::day17::part1(&containers));
             println!("Part 2: How many combinations for min containers? {}", days::day17::part2(&containers));
         },
+        18 => {
+            let light_grid: Vec<String> =read_input(&filename);
+            println!("Part 1: How many lights are on? {}", days::day18::part1(&light_grid));
+            println!("Part 2: How many lights are on? {}", days::day18::part2(&light_grid));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
