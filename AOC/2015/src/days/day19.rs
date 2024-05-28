@@ -1,4 +1,4 @@
-use std::{collections::{HashMap, HashSet}, f32::INFINITY};
+use std::collections::{HashMap, HashSet};
 
 pub fn part1(inp: &Vec<String>) -> u32 {
     let mut replacements: HashMap<String, Vec<String>> = HashMap::new();
@@ -24,28 +24,4 @@ pub fn part1(inp: &Vec<String>) -> u32 {
     }
 
     distinct_molecules.len() as u32
-}
-
-fn dfs(min_steps: &mut u32, num_steps: u32, molecule: String, medicine_molecule: String, replacements: &HashMap<String, Vec<String>>) {
-    if molecule.len() > medicine_molecule.len() {
-        return;
-    }
-    if molecule == medicine_molecule {
-        *min_steps = std::cmp::min(*min_steps, num_steps);
-        return;
-    }
-
-    for (key, values) in replacements {
-        if key.len() <= molecule.len() {
-            for i in 0..molecule.len() - key.len() + 1 {
-                if &molecule[i..i+key.len()] == key {
-                    for replacement in values {
-                        let mut new_molecule: String = molecule.clone();
-                        new_molecule.replace_range(i..i+key.len(), replacement);
-                        dfs(min_steps, num_steps + 1, new_molecule, medicine_molecule.clone(), replacements)
-                    }
-                }
-            }
-        }
-    }
 }

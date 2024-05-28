@@ -138,6 +138,11 @@ fn main() {
             let inp: Vec<String> = read_input(&filename);
             println!("Part 1: How many distinct molecules? {}", days::day19::part1(&inp));
         },
+        20 => {
+            let num_presents: usize = read_input(&filename).get(0).unwrap().clone().parse().unwrap();
+            println!("Part 1: Min house number with at least 36000000 presents: {}", days::day20::part1(num_presents));
+            println!("Part 2: Min house number with at least 36000000 presents: {}", days::day20::part2(num_presents));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
