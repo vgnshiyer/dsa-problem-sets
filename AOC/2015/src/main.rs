@@ -134,6 +134,10 @@ fn main() {
             println!("Part 1: How many lights are on? {}", days::day18::part1(&light_grid));
             println!("Part 2: How many lights are on? {}", days::day18::part2(&light_grid));
         },
+        19 => {
+            let inp: Vec<String> = read_input(&filename);
+            println!("Part 1: How many distinct molecules? {}", days::day19::part1(&inp));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
