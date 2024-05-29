@@ -143,6 +143,11 @@ fn main() {
             println!("Part 1: Min house number with at least 36000000 presents: {}", days::day20::part1(num_presents));
             println!("Part 2: Min house number with at least 36000000 presents: {}", days::day20::part2(num_presents));
         },
+        21 => {
+            let inp: Vec<String> = read_input(&filename);
+            println!("Part 1: Min Gold spent: {}", days::day21::part1(&inp));
+            println!("Part 2: Max Gold spent: {}", days::day21::part2(&inp));
+        },
         _ => println!("The Day number is either invalid or is not implemented.")
     }
 }
